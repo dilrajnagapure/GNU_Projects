@@ -3,7 +3,7 @@
    https://www.youtube.com/watch?v=AzYC5hO2uJk&list=PLERTijJOmYrDiiWd10iRHY0VRHdJwUH4g&index=7
 3. Commands on terminal 1:
    Open project location and open terminal 1
-   make clear
+   make clean
    make semi  // Build code which uses semihosting feature
    make load  // run host program OpenOCD   
    
@@ -12,6 +12,7 @@
    target remote localhost:3333
    monitor reset init                            //gdb init
    monitor flash write_image erase final_sh.elf  //flash the mcu with code
+   monitor arm semihosting enable                //enable semihosting
    monitor reset halt                            // it shall print pc, msp values
    monitor resume                                //Green led shall start blinking
    
